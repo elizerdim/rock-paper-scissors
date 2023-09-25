@@ -6,11 +6,11 @@
 
 :root {
 /* Primary */
---scissors-gradient-1: hsl(39, 89%, 49%);
+--scissors-gradient-1: hsl(39, 89%, 45%);
 --scissors-gradient-2: hsl(40, 84%, 53%);
---paper-gradient-1: hsl(230, 89%, 62%);
+--paper-gradient-1: hsl(230, 89%, 60%);
 --paper-gradient-2: hsl(230, 89%, 65%);
---rock-gradient-1: hsl(349, 71%, 52%);
+--rock-gradient-1: hsl(349, 71%, 48%);
 --rock-gradient-2: hsl(349, 70%, 56%);
 --white: white;
 
@@ -71,6 +71,43 @@ header h1 {
   font-weight: 700;
   line-height: .8em;
   margin-top: .1em;
+}
+
+.game-btn {
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  background-color: var(--white);
+  border-radius: 100px;
+}
+
+.game-btn svg {
+  fill: var(--radial-gradient-1);
+}
+
+.paper-img {
+  transform: rotate(-15deg);
+}
+
+.rock-img {
+  transform: rotate(30deg);
+}
+
+.paper-btn {
+  border: 12px solid var(--paper-gradient-2);
+  box-shadow: 0px 7px var(--paper-gradient-1),
+    inset 0px 5px hsla(0, 0%, 0%, .2);
+}
+
+.scissors-btn {
+  border: 12px solid var(--scissors-gradient-2);
+  box-shadow: 0px 7px var(--scissors-gradient-1),
+    inset 0px 5px hsla(0, 0%, 0%, .2);
+}
+
+.rock-btn {
+  border: 12px solid var(--rock-gradient-2);
+  box-shadow: 0px 7px var(--rock-gradient-1),
+    inset 0px 5px hsla(0, 0%, 0%, .2);
 }
 
 footer {
