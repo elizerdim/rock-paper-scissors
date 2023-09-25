@@ -12,6 +12,7 @@
 --paper-gradient-2: hsl(230, 89%, 65%);
 --rock-gradient-1: hsl(349, 71%, 52%);
 --rock-gradient-2: hsl(349, 70%, 56%);
+--white: white;
 
 /* Neutral */
 --dark-text: hsl(229, 25%, 31%);
@@ -25,4 +26,68 @@
 
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: var(--radial-gradient-1);
+  text-transform: uppercase;
+}
+
+header {
+  border: 3px solid var(--header-outline);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1em 1em 1.5em;
+  margin: 3em auto 0;
+  width: 80%;
+}
+
+header h1 {
+  line-height: .8em;
+  font-weight: 600;
+  color: var(--white);
+  font-size: 1.7em;
+  align-self: center;
+}
+
+.score {
+  background-color: var(--white);
+  text-align: center;
+  width: 28%;
+  border-radius: 5px;
+  padding: .8em .8em 1.2em .8em;
+}
+
+.score h2 {
+  color: var(--score-text);
+  font-size: .8em;
+  letter-spacing: .1em;
+}
+
+.score p {
+  color: var(--dark-text);
+  font-size: 3em;
+  font-weight: 700;
+  line-height: .8em;
+  margin-top: .1em;
+}
+
+@media only screen and (min-width: 600px) {
+  header {
+    max-width: 600px;
+  }
+
+  header h1 {
+    font-size: 2.5em;
+  }
+
+  .score {
+    width: 25%;
+  }
+
+  .score h2 {
+    font-size: 1em;
+  }
+
+  .score p {
+    font-size: 3.5em;
+  }
 }
