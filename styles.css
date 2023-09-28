@@ -90,6 +90,27 @@ header h1 {
   grid-column-gap: 60px;
 }
 
+.container-game::before {
+  /* width to height ratio of an equilateral triangle is 100/86.6 */
+  width: 200px;
+  height: 173.2px;
+  position: absolute;
+  z-index: -1;
+  top: calc(50% - 86.6px - 6px);
+  left: calc(50% - 100px);
+  display: block;
+  content: "";
+  background:
+    linear-gradient(to top left,
+      transparent 49.5%, var(--radial-gradient-2) 50% calc(50% + 15px),
+      transparent calc(50% + 15px + 1px)) right/50% 100%,
+    linear-gradient(to top right,
+      transparent 49.5%,var(--radial-gradient-2) 50% calc(50% + 15px),
+      transparent calc(50% + 15px + 1px)) left/50% 100%,
+    linear-gradient(var(--radial-gradient-2), var(--radial-gradient-2)) top/calc(100% - 20px) 15px;
+  background-repeat: no-repeat;
+}
+
 .game-btn {
   width: 120px;
   aspect-ratio: 1 / 1;
