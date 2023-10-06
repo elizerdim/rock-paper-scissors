@@ -26,7 +26,7 @@
 
 body {
   font-family: "Barlow Semi Condensed", sans-serif;
-  background: radial-gradient(var(--radial-gradient-1) 50%, var(--radial-gradient-2));
+  background: radial-gradient(134.34% 134.34% at 50% 0%, var(--radial-gradient-1) 0%, var(--radial-gradient-2) 100%);
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
