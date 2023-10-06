@@ -174,11 +174,13 @@ footer .rules-btn {
   color: var(--white);
   text-transform: uppercase;
   border: 1px solid var(--white);
-  border-radius: 10px;
-  padding: 1em 2.5em;
-  letter-spacing: .2em;
+  border-radius: 8px;
+  font-family: inherit;
+  font-style: normal;
+  letter-spacing: .15em;
+  padding: .6em 2.25em;
   font-weight: 600;
-  margin: 0 auto;
+  margin: 3.5em auto;
 }
 
 @media only screen and (min-width: 600px) {
