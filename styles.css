@@ -34,7 +34,6 @@ body {
 }
 
 body > * {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,6 +77,10 @@ header h1 {
   font-weight: 700;
   line-height: .8em;
   margin-top: .1em;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .container-game {
