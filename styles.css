@@ -41,29 +41,33 @@ body > * {
 }
 
 header {
-  border: 3px solid var(--header-outline);
-  border-radius: 10px;
+  border: 2px solid var(--header-outline);
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
-  padding: 1em 1em 1em 1.5em;
-  width: 80%;
-  margin-top: 1em;
+  padding: .75em .75em .75em 1em;
+  width: 100%;
+  max-width: 75%;
+  margin: 2em;
 }
 
 header h1 {
   line-height: .8em;
   font-weight: 600;
   color: var(--white);
-  font-size: 1.7em;
+  font-size: 1.2em;
+  font-weight: 700;
+  line-height: .8em;
+  letter-spacing: .05em;
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.20);
   align-self: center;
 }
 
 .score {
   background-color: var(--white);
   text-align: center;
-  width: 35%;
-  border-radius: 5px;
-  padding: .8em .8em 1.2em .8em;
+  border-radius: 4px;
+  padding: .625em 1em;
 }
 
 .score h2 {
@@ -74,7 +78,7 @@ header h1 {
 
 .score p {
   color: var(--dark-text);
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 700;
   line-height: .8em;
   margin-top: .1em;
@@ -179,7 +183,8 @@ footer .rules-btn {
 
 @media only screen and (min-width: 600px) {
   header {
-    max-width: 600px;
+    max-width: 700px;
+    padding: 1.125em 1.5em 1.125em 2em;
   }
 
   header h1 {
@@ -187,7 +192,7 @@ footer .rules-btn {
   }
 
   .score {
-    width: 25%;
+    padding: 1em 2em;
   }
 
   .score h2 {
@@ -196,6 +201,7 @@ footer .rules-btn {
 
   .score p {
     font-size: 3.5em;
+    margin-top: .3em;
   }
 
   .container-game {
@@ -224,8 +230,8 @@ footer .rules-btn {
 }
 
 @media only screen and (min-width: 1200px) {
-  .container-game {
-    width: 30%;
+  header {
+    margin-top: 3em;
   }
   
   footer .rules-btn {
