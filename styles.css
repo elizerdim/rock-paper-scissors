@@ -22,6 +22,7 @@
   /* Background */
   --radial-gradient-1: hsl(214, 47%, 23%);
   --radial-gradient-2: hsl(237, 49%, 15%);
+  --background-triangle: hsla(0, 0%, 0%, .2);
 }
 
 body {
@@ -105,12 +106,12 @@ main {
   content: "";
   background:
     linear-gradient(to top left,
-      transparent 49.5%, var(--radial-gradient-2) 50% calc(50% + 15px),
+      transparent 49.5%, var(--background-triangle) 50% calc(50% + 15px),
       transparent calc(50% + 15px + 1px)) right/50% 100%,
     linear-gradient(to top right,
-      transparent 49.5%,var(--radial-gradient-2) 50% calc(50% + 15px),
+      transparent 49.5%,var(--background-triangle) 50% calc(50% + 15px),
       transparent calc(50% + 15px + 1px)) left/50% 100%,
-    linear-gradient(var(--radial-gradient-2), var(--radial-gradient-2)) top/calc(100% - 20px) 15px;
+    linear-gradient(var(--background-triangle), var(--background-triangle)) top/calc(100% - 20px) 15px;
   background-repeat: no-repeat;
 }
 
