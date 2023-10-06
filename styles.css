@@ -234,41 +234,14 @@ footer .rules-btn {
     box-shadow: 0px 8px var(--rock-gradient-1),
       inset 0px 5px hsla(0, 0%, 0%, .2);
   }
+
+  footer .rules-btn {
+    font-size: 1em;
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-  header {
-    margin-top: 3em;
-  }
-  
-  .container-game {
-    column-gap: 80px;
-  }
-
-  .container-game::before {
-    width: 300px;
-    height: 259.8px;
-    top: calc(50% - 129.9px);
-    left: calc(50% - 150px);  
-  }
-  
-  .game-btn {
-    width: 200px;
-    border-width: 20px;
-  }
-
-  .paper-btn {
-    box-shadow: 0px 10px var(--paper-gradient-1),
-      inset 0px 7px hsla(0, 0%, 0%, .2);
-  }
-  
-  .scissors-btn {
-    box-shadow: 0px 10px var(--scissors-gradient-1),
-      inset 0px 7px hsla(0, 0%, 0%, .2);
-  }
-  
-  .rock-btn {
-    box-shadow: 0px 10px var(--rock-gradient-1),
-      inset 0px 7px hsla(0, 0%, 0%, .2);
+  footer .rules-btn {
+    margin: 0 3em 2em auto;
   }
 }
