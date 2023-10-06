@@ -147,6 +147,7 @@ main {
 
 .game-btn svg {
   fill: var(--radial-gradient-1);
+  height: 45%;
 }
 
 .paper-img {
