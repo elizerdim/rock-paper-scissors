@@ -89,25 +89,24 @@ main {
 }
 
 .container-game {
-  width: 90%;
-  max-width: 350px;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   display: grid;
-  grid-template: 1fr 1fr / 1fr 1fr;
-  grid-column-gap: 60px;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  column-gap: 40px;
+  position: relative;
 }
 
 .container-game::before {
   /* width to height ratio of an equilateral triangle is 100/86.6 */
+  content: "";
+  display: block;
   width: 200px;
   height: 173.2px;
   position: absolute;
-  z-index: -1;
-  top: calc(50% - 86.6px - 6px);
+  top: calc(50% - 86.6px);
   left: calc(50% - 100px);
-  display: block;
-  content: "";
+  z-index: -1;
   background:
     linear-gradient(to top left,
       transparent 49.5%, var(--background-triangle) 50% calc(50% + 15px),
@@ -205,7 +204,14 @@ footer .rules-btn {
   }
 
   .container-game {
-    max-width: 500px;
+    column-gap: 64px;
+  }
+
+  .container-game::before {
+    width: 250px;
+    height: 216.5px;
+    top: calc(50% - 108.25px);
+    left: calc(50% - 125px);  
   }
 
   .game-btn {
@@ -234,16 +240,17 @@ footer .rules-btn {
     margin-top: 3em;
   }
   
-  footer .rules-btn {
-    margin: 0 3em 2em auto;
-  }
-}
-
-@media only screen and (min-width: 1800px) {
   .container-game {
-    max-width: 600px;
+    column-gap: 80px;
   }
 
+  .container-game::before {
+    width: 300px;
+    height: 259.8px;
+    top: calc(50% - 129.9px);
+    left: calc(50% - 150px);  
+  }
+  
   .game-btn {
     width: 200px;
     border-width: 20px;
