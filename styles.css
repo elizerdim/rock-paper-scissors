@@ -262,7 +262,17 @@ footer .rules-btn {
   }
 
   footer .rules-btn:hover {
-    background: linear-gradient(0deg, #F3F3F3 0%, #FFF 100%);
+    background-color: var(--white);
     color: var(--dark-text);
   }
+}
+
+/* active states */
+.game-btn:active {
+  transform: translateY(5px);
+}
+
+footer .rules-btn:active {
+  background-color: var(--radial-gradient-2);
+  color: var(--white);
 }

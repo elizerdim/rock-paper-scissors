@@ -68,3 +68,4 @@ const proudOfThisFunc = () => {
 
 - [CSS triangle](https://stackoverflow.com/a/56484262) - I used this stackoverflow answer to draw the triangle in the background.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [LOVE and HATE](https://css-tricks.com/remember-selectors-with-love-and-hate/) - The order of pseudo-classes :link, :visited, :hover, and :active matter and this article provides a nice way to remember the correct order.
