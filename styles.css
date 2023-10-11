@@ -39,6 +39,11 @@ body {
   min-height: 100vh;
 }
 
+button {
+  text-transform: inherit;
+  font-family: inherit;
+}
+
 body > * {
   display: flex;
   justify-content: center;
@@ -177,10 +182,8 @@ footer .rules-btn {
   background-color: transparent;
   border: none;
   color: var(--white);
-  text-transform: uppercase;
   border: 1px solid var(--white);
   border-radius: 8px;
-  font-family: inherit;
   font-style: normal;
   letter-spacing: .15em;
   padding: .6em 2.25em;
