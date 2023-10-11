@@ -28,6 +28,8 @@
   --outline-1: hsla(0, 0%, 100%, 0.03); 
   --outline-2: hsla(0, 0%, 100%, 0.05); 
   --outline-3: hsla(0, 0%, 100%, 0.07); 
+
+  --button-variable: 12px;
 }
 
 body {
@@ -129,7 +131,7 @@ main {
 }
 
 .game-btn {
-  width: 120px;
+  width: calc(var(--button-variable) * 10);
   aspect-ratio: 1 / 1;
   background-color: var(--white);
   border-radius: 1000px;
@@ -137,21 +139,21 @@ main {
 }
 
 .paper-btn {
-  border: 12px solid var(--paper-gradient-2);
-  box-shadow: 0px 6px var(--paper-gradient-1),
-    inset 0px 4px hsla(0, 0%, 0%, .2);
+  border: var(--button-variable) solid var(--paper-gradient-2);
+  box-shadow: 0px calc(var(--button-variable) / 2) var(--paper-gradient-1),
+    inset 0px calc(var(--button-variable) / 3) hsla(0, 0%, 0%, .2);
 }
 
 .scissors-btn {
-  border: 12px solid var(--scissors-gradient-2);
-  box-shadow: 0px 6px var(--scissors-gradient-1),
-    inset 0px 4px hsla(0, 0%, 0%, .2);
+  border: var(--button-variable) solid var(--scissors-gradient-2);
+  box-shadow: 0px calc(var(--button-variable) / 2) var(--scissors-gradient-1),
+    inset 0px calc(var(--button-variable) / 3) hsla(0, 0%, 0%, .2);
 }
 
 .rock-btn {
-  border: 12px solid var(--rock-gradient-2);
-  box-shadow: 0px 6px var(--rock-gradient-1),
-    inset 0px 4px hsla(0, 0%, 0%, .2);
+  border: var(--button-variable) solid var(--rock-gradient-2);
+  box-shadow: 0px calc(var(--button-variable) / 2) var(--rock-gradient-1),
+    inset 0px calc(var(--button-variable) / 3) hsla(0, 0%, 0%, .2);
   grid-column: span 2;
 }
 
@@ -192,6 +194,10 @@ footer .rules-btn {
 }
 
 @media only screen and (min-width: 600px) {
+  :root {
+    --button-variable: 16px;
+  }
+
   header {
     max-width: 700px;
     padding: 1.125em 1.5em 1.125em 2em;
@@ -241,16 +247,16 @@ footer .rules-btn {
     box-shadow: 0px 8px var(--scissors-gradient-1),
       inset 0px 5px hsla(0, 0%, 0%, .2);
   }
-  
-  .rock-btn {
-    box-shadow: 0px 8px var(--rock-gradient-1),
-      inset 0px 5px hsla(0, 0%, 0%, .2);
+}
+
+@media only screen and (min-width: 1000px) {
+  :root {
+    --button-variable: 25px;
   }
 
   footer .rules-btn {
     font-size: 1em;
   }
-}
 
 @media only screen and (min-width: 1200px) {
   footer .rules-btn {
