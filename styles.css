@@ -230,6 +230,24 @@ main {
   }
 }
 
+.winner::before {
+  content: "";
+  display: block;
+  width: calc(var(--button-variable) * 20);
+  height: calc(var(--button-variable) * 20);
+  background: radial-gradient(
+    hsla(0, 0%, 100%, .08), 
+    hsla(0, 0%, 100%, .08) 50%, 
+    hsla(0, 0%, 100%, .05) 50%, 
+    hsla(0, 0%, 100%, .05) 60%,
+    hsla(0, 0%, 100%, .03) 60%,
+    hsla(0, 0%, 100%, .03) 100%
+  );
+  position: absolute;
+  z-index: -1;
+  border-radius: 100%;
+}
+
 .container-result p {
   color: var(--white);
   text-align: center;
