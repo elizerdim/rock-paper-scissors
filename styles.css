@@ -136,6 +136,10 @@ main {
   background-color: var(--white);
   border-radius: 1000px;
   place-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .paper-btn {
@@ -171,6 +175,94 @@ main {
 }
 
 .container-result {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+}
+
+.computer-result {
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  width: calc(var(--button-variable) * 10 - var(--button-variable));
+  aspect-ratio: 1 / 1;
+  background-color: var(--radial-gradient-2);
+  border-radius: 100%;
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* loading animation code taken from https://loading.io/css/ -- adjusted for responsiveness*/
+.lds-dual-ring {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  aspect-ratio: 1 / 1;
+}
+
+.lds-dual-ring:after {
+  content: " ";
+  display: block;
+  width: 64%;
+  aspect-ratio: 1 / 1;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container-result p {
+  color: var(--white);
+  text-align: center;
+}
+
+.user-result p,
+.computer-result p {
+  margin-top: calc(1em + 6px);
+  letter-spacing: 1.875px;
+}
+
+.container-play-again {
+  grid-column: span 2;
+}
+
+.container-play-again p {
+  font-size: 3.5em;
+  margin-top: .5em;
+}
+
+.container-play-again button {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  background-color: var(--white);
+  color: var(--dark-text);
+  padding: .8em 3.5em;
+  margin-top: 1em;
+  letter-spacing: 2.5px;
+  border-radius: 8px;
+}
+
+.hidden {
   display: none;
 }
 
@@ -233,19 +325,20 @@ footer .rules-btn {
     left: calc(50% - 125px);  
   }
 
-  .game-btn {
-    width: 160px;
-    border-width: 16px;
+  footer .rules-btn {
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .container-result {
+    column-gap: 300px;
+    position: relative;
   }
 
-  .paper-btn {
-    box-shadow: 0px 8px var(--paper-gradient-1),
-      inset 0px 5px hsla(0, 0%, 0%, .2);
-  }
-  
-  .scissors-btn {
-    box-shadow: 0px 8px var(--scissors-gradient-1),
-      inset 0px 5px hsla(0, 0%, 0%, .2);
+  .container-play-again {
+    position: absolute;
+    left: 215px;
   }
 }
 
@@ -254,11 +347,24 @@ footer .rules-btn {
     --button-variable: 25px;
   }
 
-  footer .rules-btn {
-    font-size: 1em;
+  .user-result,
+  .computer-result {
+    display: flex;
+    flex-direction: column-reverse;    
   }
 
-@media only screen and (min-width: 1200px) {
+  .user-result p,
+  .computer-result p {
+    font-size: 1.5em;
+    margin-top: -4em;
+    margin-bottom: 2em;
+  }
+
+  .container-play-again {
+    left: 305px;
+    top: 30px;
+  }
+
   footer .rules-btn {
     margin: 0 3em 2em auto;
   }
@@ -266,8 +372,12 @@ footer .rules-btn {
 
 /* media rule for hover states */
 @media (hover: hover) and (pointer: fine) and (min-width: 500px) {
-  .game-btn:hover {
+  button.game-btn:hover {
     outline: 30px solid var(--outline-2);
+  }
+
+  .container-play-again button:hover {
+    color: var(--rock-gradient-1);
   }
 
   footer .rules-btn:hover {
@@ -279,6 +389,12 @@ footer .rules-btn {
 /* active states */
 .game-btn:active {
   transform: translateY(5px);
+}
+
+.container-play-again button:active {
+  background-color: transparent;
+  outline: 1px solid white;
+  color: var(--white);
 }
 
 footer .rules-btn:active {
