@@ -365,6 +365,10 @@ footer .rules-btn {
     --button-variable: 25px;
   }
 
+  header {
+    max-width: min(75%, 900px);
+  }
+
   .user-result,
   .computer-result {
     display: flex;
