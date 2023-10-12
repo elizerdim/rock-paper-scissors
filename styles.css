@@ -343,6 +343,10 @@ footer .rules-btn {
     left: calc(50% - 125px);  
   }
 
+  .container-result {
+    column-gap: 90px;
+  }
+
   footer .rules-btn {
     font-size: 1em;
   }
