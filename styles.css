@@ -130,7 +130,8 @@ main {
   background-repeat: no-repeat;
 }
 
-.game-btn {
+.game-btn,
+.result-component {
   width: calc(var(--button-variable) * 10);
   aspect-ratio: 1 / 1;
   background-color: var(--white);
@@ -161,7 +162,8 @@ main {
   grid-column: span 2;
 }
 
-.game-btn svg {
+.game-btn svg,
+.result-component svg {
   fill: var(--radial-gradient-1);
   height: 45%;
 }
@@ -398,7 +400,7 @@ footer .rules-btn {
 
 /* media rule for hover states */
 @media (hover: hover) and (pointer: fine) and (min-width: 500px) {
-  button.game-btn:hover {
+  .game-btn:hover {
     outline: 30px solid var(--outline-2);
   }
 
