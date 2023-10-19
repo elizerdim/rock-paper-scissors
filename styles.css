@@ -312,12 +312,12 @@ footer .rules-btn {
 
   header {
     max-width: min(75%, 700px);
-    padding: 1.125em 1.5em 1.125em 2em;
+    padding: 1em 1.125em 1em 1.5em;
     border-radius: 15px;
   }
 
   header h1 {
-    font-size: 2em;
+    font-size: 1.8em;
   }
 
   .score {
@@ -330,8 +330,7 @@ footer .rules-btn {
   }
 
   .score p {
-    font-size: 3.5em;
-    margin-top: .3em;
+    font-size: 3em;
   }
 
   .container-game {
@@ -354,25 +353,28 @@ footer .rules-btn {
   }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 800px) {
   .container-result {
-    column-gap: 300px;
-    position: relative;
+    grid-template-columns: 1fr max-content 1fr;
+  }
+
+  .computer-result {
+    grid-column: 3 / 4;
   }
 
   .container-play-again {
-    position: absolute;
-    left: 215px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
   }
 }
 
 @media only screen and (min-width: 1000px) {
   :root {
-    --button-variable: 25px;
+    --button-variable: 20px;
   }
 
   header {
-    max-width: min(75%, 900px);
+    max-width: min(75%, 800px);
   }
 
   .user-result,
