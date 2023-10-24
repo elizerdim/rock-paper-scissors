@@ -1,6 +1,6 @@
-const gameButtons = document.getElementsByClassName("game-btn");
-const gameComponent = document.querySelector(".container-game");
-const resultComponent = document.querySelector(".container-result");
+const gameButtons = document.getElementsByClassName("game__btn");
+const gameComponent = document.querySelector(".game");
+const resultComponent = document.querySelector(".result");
 const paperSVG = document.querySelector(".paper-img").outerHTML;
 const scissorsSVG = document.querySelector(".scissors-img").outerHTML;
 const rockSVG = document.querySelector(".rock-img").outerHTML;
@@ -14,27 +14,27 @@ Array.from(gameButtons).forEach(button => button.addEventListener("click", funct
 	gameComponent.classList.add("hidden");
 	resultComponent.classList.remove("hidden");
 
-	document.querySelector(".user-choice").classList.add(`${userChoice}-btn`);
-	document.querySelector(".user-choice").innerHTML = userChoice === "paper" ? paperSVG
+	document.querySelector(".result__choice--user").classList.add(`${userChoice}`);
+	document.querySelector(".result__choice--user").innerHTML = userChoice === "paper" ? paperSVG
 		: userChoice === "scissors" ? scissorsSVG
 		: rockSVG;
 
 	setTimeout(function() {
 		document.querySelector(".loading").classList.add("hidden");
 		
-		document.querySelector(".computer-choice").classList.remove("hidden");
-		document.querySelector(".computer-choice").classList.add(`${computerChoice}-btn`);
-		document.querySelector(".computer-choice").innerHTML = computerChoice === "paper" ? paperSVG
+		document.querySelector(".result__choice--computer").classList.remove("hidden");
+		document.querySelector(".result__choice--computer").classList.add(`${computerChoice}`);
+		document.querySelector(".result__choice--computer").innerHTML = computerChoice === "paper" ? paperSVG
 		: computerChoice === "scissors" ? scissorsSVG
 		: rockSVG;
 		
-		document.querySelector(".container-play-again").classList.remove("hidden");
-		document.querySelector(".result-description").innerText = result;			
+		document.querySelector(".outcome").classList.remove("hidden");
+		document.querySelector(".outcome__description").innerText = result;			
 		
 		if (result === "you win") {
-			document.querySelector(".user-choice").classList.add("winner");
+			document.querySelector(".result__choice--user").classList.add("winner");
 		} else if (result === "you lose") {
-			document.querySelector(".computer-choice").classList.add("winner");
+			document.querySelector(".result__choice--computer").classList.add("winner");
 		}
 	}, 1000);
 
@@ -44,17 +44,17 @@ playAgainButton.addEventListener("click", function() {
 	gameComponent.classList.remove("hidden");
 	resultComponent.classList.add("hidden");
 
-	const regx = new RegExp(/[a-z]+\-btn/, 'g');
+	const regx = new RegExp(/(rock|paper|scissors)/, 'g');
 
-	document.querySelector(".user-choice").className = document.querySelector(".user-choice").className.replace(regx, '');
+	document.querySelector(".result__choice--user").className = document.querySelector(".result__choice--user").className.replace(regx, '');
 
 	document.querySelector(".loading").classList.remove("hidden");
-	document.querySelector(".computer-choice").classList.add("hidden");
-	document.querySelector(".computer-choice").className = document.querySelector(".computer-choice").className.replace(regx, '');
-	document.querySelector(".container-play-again").classList.add("hidden");
+	document.querySelector(".result__choice--computer").classList.add("hidden");
+	document.querySelector(".result__choice--computer").className = document.querySelector(".result__choice--computer").className.replace(regx, '');
+	document.querySelector(".outcome").classList.add("hidden");
 	
-	document.querySelector(".user-choice").classList.remove("winner");
-	document.querySelector(".computer-choice").classList.remove("winner");
+	document.querySelector(".result__choice--user").classList.remove("winner");
+	document.querySelector(".result__choice--computer").classList.remove("winner");
 });
 
 function getComputerChoice() {

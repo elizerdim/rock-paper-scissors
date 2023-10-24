@@ -52,7 +52,7 @@ body > * {
   align-items: center;
 }
 
-header {
+.primary-header {
   border: 2px solid var(--header-outline);
   border-radius: 5px;
   display: flex;
@@ -63,7 +63,7 @@ header {
   margin: 2em auto;
 }
 
-header h1 {
+.primary-header__title {
   line-height: .8em;
   font-weight: 600;
   color: var(--white);
@@ -82,13 +82,13 @@ header h1 {
   padding: .625em 1em;
 }
 
-.score h2 {
+.score__title {
   color: var(--score-text);
   font-size: .8em;
   letter-spacing: .1em;
 }
 
-.score p {
+.score__description {
   color: var(--dark-text);
   font-size: 2em;
   font-weight: 700;
@@ -100,7 +100,7 @@ main {
   flex-grow: 1;
 }
 
-.container-game {
+.game {
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   display: grid;
@@ -109,7 +109,7 @@ main {
   position: relative;
 }
 
-.container-game::before {
+.game::before {
   /* width to height ratio of an equilateral triangle is 100/86.6 */
   content: "";
   display: block;
@@ -130,8 +130,8 @@ main {
   background-repeat: no-repeat;
 }
 
-.game-btn,
-.result-component {
+.game__btn,
+.result__choice {
   width: calc(var(--button-variable) * 10);
   aspect-ratio: 1 / 1;
   background-color: var(--white);
@@ -143,27 +143,27 @@ main {
   margin: 0 auto;
 }
 
-.paper-btn {
+.paper {
   border: var(--button-variable) solid var(--paper-gradient-2);
   box-shadow: 0px calc(var(--button-variable) / 2) var(--paper-gradient-1),
     inset 0px calc(var(--button-variable) / 3) hsla(0, 0%, 0%, .2);
 }
 
-.scissors-btn {
+.scissors {
   border: var(--button-variable) solid var(--scissors-gradient-2);
   box-shadow: 0px calc(var(--button-variable) / 2) var(--scissors-gradient-1),
     inset 0px calc(var(--button-variable) / 3) hsla(0, 0%, 0%, .2);
 }
 
-.rock-btn {
+.rock {
   border: var(--button-variable) solid var(--rock-gradient-2);
   box-shadow: 0px calc(var(--button-variable) / 2) var(--rock-gradient-1),
     inset 0px calc(var(--button-variable) / 3) hsla(0, 0%, 0%, .2);
   grid-column: span 2;
 }
 
-.game-btn svg,
-.result-component svg {
+.game__btn svg,
+.result__choice svg {
   fill: var(--radial-gradient-1);
   height: 45%;
 }
@@ -176,13 +176,13 @@ main {
   transform: rotate(30deg);
 }
 
-.container-result {
+.result {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 40px;
 }
 
-.computer-result {
+.result__section--computer {
   justify-self: center;
   align-self: center;
   display: flex;
@@ -203,7 +203,7 @@ main {
 }
 
 /* loading animation code taken from https://loading.io/css/ -- adjusted for responsiveness*/
-.lds-dual-ring {
+.loading__lds-dual-ring {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,7 +211,7 @@ main {
   aspect-ratio: 1 / 1;
 }
 
-.lds-dual-ring:after {
+.loading__lds-dual-ring:after {
   content: " ";
   display: block;
   width: 64%;
@@ -250,27 +250,27 @@ main {
   border-radius: 100%;
 }
 
-.container-result p {
+.result__description,
+.outcome__description {
   color: var(--white);
   text-align: center;
 }
 
-.user-result p,
-.computer-result p {
+.result__description {
   margin-top: calc(1em + 6px);
   letter-spacing: 1.875px;
 }
 
-.container-play-again {
+.outcome {
   grid-column: span 2;
 }
 
-.container-play-again p {
+.outcome__description {
   font-size: 3.5em;
   margin-top: .5em;
 }
 
-.container-play-again button {
+.play-again-btn {
   display: block;
   margin: 0 auto;
   border: none;
@@ -292,7 +292,7 @@ footer {
   align-items: center;
 }
 
-footer .rules-btn {
+.rules-btn {
   background-color: transparent;
   border: none;
   color: var(--white);
@@ -310,13 +310,13 @@ footer .rules-btn {
     --button-variable: 16px;
   }
 
-  header {
+  .primary-header {
     max-width: min(75%, 700px);
     padding: 1em 1.125em 1em 1.5em;
     border-radius: 15px;
   }
 
-  header h1 {
+  .primary-header__title {
     font-size: 1.8em;
   }
 
@@ -325,44 +325,44 @@ footer .rules-btn {
     border-radius: 8px;
   }
 
-  .score h2 {
+  .score__title {
     font-size: 1em;
   }
 
-  .score p {
+  .score__description {
     font-size: 3em;
   }
 
-  .container-game {
+  .game {
     column-gap: 64px;
   }
 
-  .container-game::before {
+  .game::before {
     width: 250px;
     height: 216.5px;
     top: calc(50% - 108.25px);
     left: calc(50% - 125px);  
   }
 
-  .container-result {
+  .result {
     column-gap: 90px;
   }
 
-  footer .rules-btn {
+  .rules-btn {
     font-size: 1em;
   }
 }
 
 @media only screen and (min-width: 800px) {
-  .container-result {
+  .result {
     grid-template-columns: 1fr max-content 1fr;
   }
 
-  .computer-result {
+  .result__section--computer {
     grid-column: 3 / 4;
   }
 
-  .container-play-again {
+  .outcome {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
   }
@@ -373,61 +373,59 @@ footer .rules-btn {
     --button-variable: 20px;
   }
 
-  header {
+  .primary-header {
     max-width: min(75%, 800px);
   }
 
-  .user-result,
-  .computer-result {
+  .result__section {
     display: flex;
     flex-direction: column-reverse;    
   }
 
-  .user-result p,
-  .computer-result p {
+  .result__description {
     font-size: 1.5em;
     margin-top: -4em;
     margin-bottom: 2em;
   }
 
-  .container-play-again {
+  .outcome {
     left: 305px;
     top: 30px;
   }
 
-  footer .rules-btn {
+  .rules-btn {
     margin: 0 3em 2em auto;
   }
 }
 
 /* media rule for hover states */
 @media (hover: hover) and (pointer: fine) and (min-width: 500px) {
-  .game-btn:hover {
+  .game__btn:hover {
     outline: 30px solid var(--outline-2);
   }
 
-  .container-play-again button:hover {
+  .play-again-btn:hover {
     color: var(--rock-gradient-1);
   }
 
-  footer .rules-btn:hover {
+  .rules-btn:hover {
     background-color: var(--white);
     color: var(--dark-text);
   }
 }
 
 /* active states */
-.game-btn:active {
+.game__btn:active {
   transform: translateY(5px);
 }
 
-.container-play-again button:active {
+.play-again-btn:active {
   background-color: transparent;
   outline: 1px solid white;
   color: var(--white);
 }
 
-footer .rules-btn:active {
+.rules-btn:active {
   background-color: var(--radial-gradient-2);
   color: var(--white);
 }
