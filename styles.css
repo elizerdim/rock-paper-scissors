@@ -421,7 +421,7 @@ footer {
 
 @media only screen and (min-width: 600px) {
   :root {
-    --button-variable: 16px;
+    --button-variable: 14px;
   }
 
   .primary-header {
@@ -488,7 +488,7 @@ footer {
 
 @media only screen and (min-width: 1000px) {
   :root {
-    --button-variable: 20px;
+    --button-variable: 16px;
   }
 
   .primary-header {
