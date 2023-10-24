@@ -32,8 +32,14 @@ Array.from(gameButtons).forEach(button => button.addEventListener("click", funct
 		document.querySelector(".outcome__description").innerText = result;			
 		
 		if (result === "you win") {
+			const userScore = document.querySelector(".score__user-score");
+			userScore.innerText = +userScore.innerText + 1;
+
 			document.querySelector(".result__choice--user").classList.add("winner");
 		} else if (result === "you lose") {
+			const computerScore = document.querySelector(".score__computer-score");
+			computerScore.innerText = +computerScore.innerText + 1;
+
 			document.querySelector(".result__choice--computer").classList.add("winner");
 		}
 	}, 1000);
