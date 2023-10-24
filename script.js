@@ -15,9 +15,11 @@ Array.from(gameButtons).forEach(button => button.addEventListener("click", funct
 	resultComponent.classList.remove("hidden");
 
 	document.querySelector(".result__choice--user").classList.add(`${userChoice}`);
-	document.querySelector(".result__choice--user").innerHTML = userChoice === "paper" ? paperSVG
-		: userChoice === "scissors" ? scissorsSVG
-		: rockSVG;
+	document.querySelector(".result__choice--user").innerHTML = userChoice === "paper" 
+		? paperSVG
+		: userChoice === "scissors" 
+			? scissorsSVG
+			: rockSVG;
 
 	setTimeout(function() {
 		document.querySelector(".loading").classList.add("hidden");
