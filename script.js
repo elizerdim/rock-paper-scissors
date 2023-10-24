@@ -97,3 +97,15 @@ function playRound(playerSelection, computerSelection) {
 
 	return result;
 };
+
+const rulesButton = document.querySelector(".rules-btn");
+const rulesCloseButton = document.querySelector(".rules__close-btn");
+const rulesModal = document.querySelector(".rules");
+
+rulesButton.addEventListener("click", function() {
+	rulesModal.classList.remove("hidden");
+});
+
+rulesCloseButton.addEventListener("click", function() {
+	rulesModal.classList.add("hidden");
+});

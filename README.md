@@ -46,6 +46,8 @@ Users should be able to:
 
 - I learned about "description" meta tag for better SEO and used it in this project
 
+- I learned how to use grid-template-areas.
+
 ```html
 <h1>Some HTML code I'm proud of</h1>
 ```

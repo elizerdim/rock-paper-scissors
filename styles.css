@@ -286,6 +286,120 @@ main {
   display: none;
 }
 
+.rules {
+  position: absolute;
+  background-color: var(--white);
+  padding: 1em 1em 2em;
+  text-align: center;
+  width: min-content;
+}
+
+.rules__close-btn {
+  background-color: transparent;
+  border: none;
+  display: block;
+  margin-left: auto;
+}
+
+.rules__close-btn svg {
+  width: 25px;
+}
+
+.rules__title {
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+.rules__description {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(3, auto) repeat(2, 1fr);
+  grid-template-areas:
+    "p p a1 s s"
+    "p p a1 s s"
+    "a2 a2 . a3 a3"
+    ". r r r ."
+    ". r r r .";
+  width: 280px;
+  margin: 0 auto;
+}
+
+.rules__description p {
+  color: var(--header-outline)
+}
+
+.rules__img {
+  width: 100px;
+  aspect-ratio: 1 / 1;
+  border-radius: 1000px;
+  place-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rules__img--paper {
+  grid-area: p;
+}
+
+.rules__img--scissors {
+  grid-area: s;
+}
+
+.rules__img--rock {
+  grid-area: r;
+  margin-top: -20px;
+}
+
+.arrow-1 {
+  grid-area: a1;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  margin-top: -3em;
+}
+
+.arrow-2 {
+  grid-area: a2;
+  align-self: center;
+  display: flex;
+  align-items: center;
+}
+
+.arrow-2 svg {
+  transform: rotate(-120deg);
+}
+
+.arrow-3 {
+  grid-area: a3;
+  align-self: center;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.arrow-3 svg {
+  transform: rotate(120deg);
+}
+
+.rules__img {
+  border: 10px solid var(--header-outline);
+  background-color: #E1E4ED;
+}
+
+.rules svg {
+  height: 45%;
+  fill: var(--header-outline);
+}
+
+.arrow svg {
+  flex-shrink: 0;
+  width: 50px;
+  height: 20px;
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -348,6 +462,10 @@ footer {
     column-gap: 90px;
   }
 
+  .rules {
+    width: 400px;
+  }
+
   .rules-btn {
     font-size: 1em;
   }
@@ -393,6 +511,10 @@ footer {
     top: 30px;
   }
 
+  .rules {
+    width: 600px;
+  }
+
   .rules-btn {
     margin: 0 3em 2em auto;
   }
@@ -406,6 +528,10 @@ footer {
 
   .play-again-btn:hover {
     color: var(--rock-gradient-1);
+  }
+
+  .rules__close-btn:hover svg {
+    fill: var(--dark-text);
   }
 
   .rules-btn:hover {
